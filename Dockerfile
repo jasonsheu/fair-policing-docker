@@ -20,6 +20,7 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 USER root
 
 RUN apt-get -y install htop
+RUN apt-get update 
 RUN apt-get -y install aria2
 RUN apt-get -y install nmap
 RUN apt-get -y install traceroute
@@ -33,6 +34,11 @@ USER jovyan
 RUN conda install -c conda-forge geopandas
 RUN pip install --no-cache-dir networkx scipy
 RUN pip install --no-cache-dir babypandas
+RUN pip install --no-cache-dir pandas
+RUN pip install --no-cache-dir numpy
+RUN pip install --no-cache-dir scipy
+RUN pip install --no-cache-dir astral
+RUN pip install --no-cache-dir pytest-shutil
 
 
 # Override command to disable running jupyter notebook at launch
